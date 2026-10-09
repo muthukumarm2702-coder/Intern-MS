@@ -1,13 +1,24 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
-
+html {
+  font-size: 16px;
+}
 html,
 body,
-#root {
-  margin: 0;
-  padding: 0;
+#ims-root {
   width: 100%;
-  display: block;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
   background: #fff;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#ims-root {
+  position: relative;
 }
