@@ -1,0 +1,442 @@
+.imsPageHRRegistration {
+  height: 100%;
+  overflow-y: auto;
+  background: #a8b3c6;
+}
+
+.imsRegistrationHRRegistration {
+  display: flex;
+  margin: 34px 8%;
+}
+
+.imsIntroHRRegistration {
+  width: 43%;
+  padding-right: 36px;
+  color: #fff;
+}
+
+.imsFormSectionHRRegistration {
+  width: 57%;
+}
+
+.imsBrandHRRegistration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.imsPhoneHRRegistration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.imsAgreementHRRegistration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.imsLogoHRRegistration {
+  padding: 8px;
+  background: #176b88;
+  border-radius: 7px;
+}
+
+.imsLogoImageHRRegistration {
+  display: block;
+  width: 19px;
+}
+
+.imsBrandTitleHRRegistration {
+  font-size: 14px;
+}
+
+.imsTaglineHRRegistration {
+  font-size: 9px;
+}
+
+.imsStatLabelHRRegistration {
+  font-size: 9px;
+  display: block;
+}
+
+.imsTitleHRRegistration {
+  margin-top: 24px;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.imsDescriptionHRRegistration {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.imsIllustrationHRRegistration {
+  width: 100%;
+  height: 285px;
+  object-fit: contain;
+}
+
+.imsDashboardHRRegistration {
+  display: block;
+  width: 92%;
+  margin: 20px auto;
+}
+
+.imsStatsHRRegistration {
+  display: flex;
+  gap: 24px;
+  margin: 34px 36px;
+}
+
+.imsStatValueHRRegistration {
+  display: block;
+}
+
+.imsFormSectionHRRegistration {
+  padding: 56px 24px 36px 30px;
+  color: #152d59;
+  font-size: 11px;
+}
+
+.imsFormTitleHRRegistration {
+  font-size: 23px;
+}
+
+.imsSubtitleHRRegistration {
+  margin: 6px 0 18px;
+  color: #55596a;
+}
+
+.imsFormHRRegistration {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.imsFieldHRRegistration {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.imsFieldHRRegistration {
+  flex: 1 1 40%;
+  min-width: 0;
+}
+
+.imsFullWidthHRRegistration {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.imsLabelHRRegistration {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.imsRequiredHRRegistration {
+  color: #df3838;
+}
+
+.imsInputHRRegistration {
+  width: 100%;
+  padding: 9px 11px;
+  font: inherit;
+}
+
+.imsSelectHRRegistration {
+  width: 100%;
+  padding: 9px 11px;
+  font: inherit;
+}
+
+.imsInputHRRegistration {
+  border: 1px solid #aab7ce;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.imsSelectHRRegistration {
+  border: 1px solid #aab7ce;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.imsInputIconHRRegistration {
+  border: 1px solid #aab7ce;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.imsPasswordHRRegistration {
+  border: 1px solid #aab7ce;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.imsModalHRRegistration {
+  border: 1px solid #aab7ce;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.imsInputHRRegistration::placeholder {
+  color: #7e7e96;
+}
+
+.imsSelectHRRegistration {
+  appearance: none;
+  padding-right: 30px;
+}
+
+.imsDropdownHRRegistration {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.imsDropdownIconHRRegistration {
+  position: absolute;
+  right: 12px;
+}
+
+.imsDropdownIconHRRegistration {
+  width: 11px;
+  height: 6px;
+  pointer-events: none;
+}
+
+.imsRoleFieldHRRegistration {
+  margin-bottom: 12px;
+}
+
+.imsCountryCodeHRRegistration {
+  padding: 9px 7px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.imsInputIconHRRegistration {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.imsPasswordHRRegistration {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.imsCompanyImageHRRegistration {
+  width: 13px;
+}
+
+.imsEyeImageHRRegistration {
+  width: 13px;
+}
+
+.imsCompanyInputHRRegistration {
+  min-width: 0;
+  border: 0;
+}
+
+.imsPasswordInputHRRegistration {
+  min-width: 0;
+  border: 0;
+}
+
+.imsEyeButtonHRRegistration {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.imsPolicyButtonHRRegistration {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.imsButtonHRRegistration {
+  font: inherit;
+  cursor: pointer;
+}
+
+.imsAgreementHRRegistration {
+  color: #7a7d90;
+}
+
+.imsCheckboxHRRegistration {
+  accent-color: #152d59;
+  flex-shrink: 0;
+}
+
+.imsPolicyButtonHRRegistration {
+  color: #08759e;
+  text-decoration: none;
+}
+
+.imsSignInLinkHRRegistration {
+  color: #08759e;
+  text-decoration: none;
+}
+
+.imsSubmitHRRegistration {
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.imsCloseButtonHRRegistration {
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.imsSubmitHRRegistration {
+  color: #fff;
+  background: #152d59;
+  margin-top: 12px;
+}
+
+.imsCloseButtonHRRegistration {
+  color: #fff;
+  background: #152d59;
+}
+
+.imsLogoHRRegistration {
+  color: #fff;
+}
+
+.imsSubmitHRRegistration:hover {
+  background: #214477;
+}
+
+.imsDividerHRRegistration {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.imsDividerHRRegistration {
+  margin-top: 20px;
+  color: #7e7e96;
+}
+
+.imsSignInHRRegistration {
+  margin-top: 20px;
+  color: #7e7e96;
+  text-align: center;
+}
+
+.imsDividerHRRegistration::before {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #e7e8ec;
+}
+
+.imsDividerHRRegistration::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #e7e8ec;
+}
+
+.imsMessageHRRegistration {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.imsFocusInputHRRegistration:focus-visible {
+  outline: 2px solid #08759e;
+  outline-offset: 3px;
+}
+
+.imsFocusSelectHRRegistration:focus-visible {
+  outline: 2px solid #08759e;
+  outline-offset: 3px;
+}
+
+.imsButtonHRRegistration:focus-visible {
+  outline: 2px solid #08759e;
+  outline-offset: 3px;
+}
+
+.imsFocusLinkHRRegistration:focus-visible {
+  outline: 2px solid #08759e;
+  outline-offset: 3px;
+}
+
+.imsModalOverlayHRRegistration {
+  position: fixed;
+  inset: 0;
+  background: #152d5970;
+}
+
+.imsModalHRRegistration {
+  max-width: 420px;
+  margin: 15vh auto;
+  padding: 28px;
+}
+
+.imsModalTitleHRRegistration {
+  font-size: 20px;
+}
+
+.imsModalTextHRRegistration {
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@media (max-width: 760px) {
+  .imsRegistrationHRRegistration {
+    flex-direction: column;
+    margin: 24px;
+  }
+
+  .imsIntroHRRegistration {
+    width: 100%;
+    padding: 0;
+  }
+
+  .imsFormSectionHRRegistration {
+    width: 100%;
+    padding: 28px 0;
+  }
+
+  .imsIllustrationHRRegistration {
+    height: 230px;
+  }
+
+  .imsDashboardHRRegistration {
+    max-width: 380px;
+  }
+
+  .imsStatsHRRegistration {
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .imsModalHRRegistration {
+    margin: 15vh 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .imsFieldHRRegistration {
+    flex-basis: 100%;
+  }
+
+  .imsBrandTitleHRRegistration {
+    font-size: 12px;
+  }
+
+  .imsAgreementHRRegistration {
+    align-items: flex-start;
+    line-height: 18px;
+  }
+}

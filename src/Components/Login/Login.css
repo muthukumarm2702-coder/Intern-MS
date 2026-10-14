@@ -338,16 +338,13 @@
   height: 22px;
   overflow: visible;
   
-  
+
 }
 
 .imsClosedEyeLogin .imsShutEyeLogin {
   display: block;
 }
 
-.imsClosedEyeLogin img {
-  visibility: hidden;
-}
 
 .imsPasswordRowLogin {
   display: flex;

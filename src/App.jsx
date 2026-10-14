@@ -4,8 +4,13 @@ import {ForgetPassword} from './Components/Login/ForgetPassword.jsx';
 import {OtpForgetPassword} from './Components/Login/OtpForgetPassword.jsx';
 import {ResetPassword} from './Components/Login/ResetPassword.jsx';
 import {PasswordResetSuccess} from './Components/Login/PasswordResetSuccess.jsx';
+import {HRRegistration} from './Components/Registration/HRRegistration.jsx';
 
 const router = createBrowserRouter([
+  {
+    path: '/hr-registration',
+    element: <HRRegistration />,
+  },
   {
     path: '/',
     element: <Navigate to="/login" replace />,

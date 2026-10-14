@@ -166,11 +166,11 @@ export const Login = () => {
           <button
             type="button"
             className={`imsIconEyeLogin${showPassword ? ' imsClosedEyeLogin' : ''}`}
-            aria-label={showPassword ? 'Hide password' : 'Show password'}
+           
             onClick={() => setShowPassword((visible) => !visible)}
           >
             <img src={eyeOpen} alt="eyeOpen" />
-            <span className="imsShutEyeLogin" />
+            
           </button>
         </div>
 
@@ -203,7 +203,7 @@ export const Login = () => {
         </button>
 
         <p className="imsAccountLogin">
-          Don't have an account? <a href="#">Create Account</a>
+          Don't have an account? <a href="/hr-registration">Create Account</a>
         </p>
 
         <div className="imsFooterLogin">
