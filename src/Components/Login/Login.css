@@ -8,7 +8,7 @@
 }
 
 .imsDotTaglineLogin::before {
-  content: "\2022";
+  content: '\2022';
 }
 
 .imsPageLogin {
@@ -19,7 +19,7 @@
   overflow: hidden;
   text-align: left;
   font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(270deg, #ffffff 35%, #566b94 93%);
+  background: linear-gradient(to left, #ffffff 35%, #566b94 93%);
   font-size: 16px;
 }
 
@@ -43,8 +43,9 @@
 .imsLogoLogin {
   width: 44px;
   height: 44px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
   background: #1a6b8a;
 }
@@ -54,7 +55,7 @@
   height: auto;
 }
 
-.imsBrandTextLogin h3 {
+.imsBrandNameLogin {
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;
@@ -119,7 +120,7 @@
   left: 64%;
 }
 
-.imsActiveCardLogin h2 {
+.imsActiveCardLogin strong {
   font-size: 30px;
   line-height: 36px;
   font-weight: 600;
@@ -185,8 +186,9 @@
 .imsQuoteIconLogin {
   width: 48px;
   height: 48px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
   background: #12275a;
 }
@@ -328,23 +330,6 @@
   display: block;
   pointer-events: none;
 }
-
-.imsShutEyeLogin {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 22px;
-  height: 22px;
-  overflow: visible;
-  
-
-}
-
-.imsClosedEyeLogin .imsShutEyeLogin {
-  display: block;
-}
-
 
 .imsPasswordRowLogin {
   display: flex;
@@ -488,1043 +473,225 @@
   background: #8fa0c0;
 }
 
-@media (max-width: 1800px), (max-height: 950px) {
-  .imsBrandLogin {
-    gap: 10px;
+.imsPageLogin {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 5%;
+  min-height: 100vh;
+  height: auto;
+  padding: 54px 6%;
+  overflow: visible;
+}
+
+.imsLeftLogin {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+  min-width: 0;
+  height: auto;
+}
+
+.imsBrandLogin {
+  position: static;
+  width: 100%;
+}
+
+.imsTitleLogin,
+.imsDescLogin {
+  width: 100%;
+}
+
+.imsTitleLogin {
+  position: static;
+  margin-top: 40px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.imsDescLogin {
+  position: static;
+  margin-top: 24px;
+  white-space: normal;
+}
+
+.imsArtLogin {
+  position: static;
+  display: block;
+  width: 90%;
+  max-width: 860px;
+  height: 440px;
+  margin: 24px auto 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+.imsQuoteLogin {
+  position: static;
+  width: 90%;
+  height: auto;
+  min-height: 78px;
+  margin: 24px auto 0;
+  padding: 16px;
+}
+
+.imsQuoteTextLogin {
+  min-width: 0;
+}
+
+.imsQuoteTextLogin p {
+  white-space: normal;
+}
+
+.imsQuoteIconLogin {
+  flex-shrink: 0;
+}
+
+.imsActiveCardLogin {
+  position: static;
+  width: 31%;
+  height: auto;
+  min-height: 107px;
+  margin-top: 32px;
+  padding: 16px;
+}
+
+.imsFormLogin {
+  position: static;
+  width: 35%;
+  max-width: 595px;
+  min-width: 0;
+  margin-top: 110px;
+}
+
+.imsInputLogin input {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 1600px) {
+  .imsPageLogin {
+    padding: 40px 5%;
+    gap: 4%;
   }
 
-  .imsLogoLogin {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
+  .imsLeftLogin {
+    width: 56%;
   }
 
-  .imsLogoLogin img {
-    width: 20px;
-  }
-
-  .imsBrandTextLogin h3 {
-    font-size: 16px;
-    line-height: 23px;
-  }
-
-  .imsBrandTextLogin p {
-    font-size: 11px;
-    line-height: 15px;
-    letter-spacing: 0;
+  .imsFormLogin {
+    width: 40%;
+    margin-top: 96px;
   }
 
   .imsTitleLogin {
-    font-size: 34px;
-    line-height: 41px;
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 32px;
   }
 
   .imsDescLogin {
-    font-size: 13px;
-    line-height: 18px;
-  }
-
-  .imsActiveCardLogin {
-    height: 87px;
-    padding: 0 0 0 45px;
-    border-radius: 10px;
-    box-shadow: 0 2px 3px rgba(30, 50, 100, 6%);
-  }
-
-  .imsActiveCardLogin h2 {
-    font-size: 24px;
-    line-height: 29px;
-  }
-
-  .imsActiveLabelLogin {
-    margin-top: 3px;
-    font-size: 9px;
-    line-height: 11px;
-  }
-
-  .imsActiveTrendLogin {
-    gap: 4px;
-    margin-top: 5px;
-    font-size: 11px;
-    line-height: 16px;
-  }
-
-  .imsActiveTrendLogin img {
-    width: 11px;
-  }
-
-  .imsArtLogin {
-    width: 572px;
-    height: 471px;
-  }
-
-  .imsQuoteLogin {
-    height: 60px;
-    padding: 0 14px;
-    gap: 13px;
-    border-radius: 13px;
-  }
-
-  .imsQuoteIconLogin {
-    width: 39px;
-    height: 39px;
-    border-radius: 8px;
-  }
-
-  .imsQuoteIconLogin img {
-    width: 20px;
-  }
-
-  .imsQuoteTextLogin p {
-    font-size: 12px;
-    line-height: 18px;
-  }
-
-  .imsQuoteTextLogin span {
-    font-size: 11px;
-    line-height: 15px;
-  }
-
-  .imsHeadingLogin {
-    font-size: 27px;
-    line-height: 33px;
-  }
-
-  .imsSubheadLogin {
-    margin: 7px 0 0;
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-  .imsLabelLogin,
-  .imsPasswordLabelLogin {
-    font-size: 12px;
-    line-height: 16px;
-  }
-
-  .imsForgotLogin {
-    font-size: 11px;
-  }
-
-  .imsLabelEmailLogin {
-    margin-top: 46px;
-  }
-
-  .imsInputLogin {
-    height: 47px;
-    margin-top: 7px;
-  }
-
-  .imsInputLogin input {
-    padding: 0 41px 0 34px;
-    border-radius: 7px;
-    font-size: 13px;
-  }
-
-  .imsIconInputLogin {
-    left: 11px;
-    width: 16px;
-    height: 16px;
-  }
-
-  .imsIconEyeLogin {
-    right: 12px;
-    width: 18px;
-    height: 18px;
-  }
-
-  .imsIconEyeLogin img {
-    width: 18px;
-    height: 18px;
-  }
-
-  .imsShutEyeLogin {
-    width: 18px;
-    height: 18px;
-  }
-
-  .imsPasswordRowLogin {
-    margin-top: 23px;
-  }
-
-  .imsRememberLogin {
-    gap: 8px;
-    margin-top: 23px;
-    height: 16px;
-    font-size: 12px;
-  }
-
-  .imsRememberLogin input {
-    width: 14px;
-    height: 14px;
-  }
-
-  .imsErrorLogin {
-    margin: 13px 0 0;
-    font-size: 11px;
-    line-height: 15px;
-  }
-
-  .imsSigninLogin {
-    gap: 7px;
-    height: 43px;
-    margin-top: 23px;
-    border-radius: 5px;
-    font-size: 13px;
-    letter-spacing: 0;
-  }
-
-  .imsSigninLogin img {
-    width: 13px;
-  }
-
-  .imsLineDividerLogin {
-    margin-top: 53px;
-    height: 16px;
-  }
-
-  .imsLineDividerLogin::before {
-    top: 8px;
-  }
-
-  .imsLineDividerLogin span {
-    padding: 0 13px;
-    font-size: 11px;
-    line-height: 16px;
-  }
-
-  .imsGoogleLogin img {
-    width: 16px;
-  }
-
-  .imsGoogleLogin {
-    gap: 7px;
-    width: 154px;
-    height: 39px;
-    margin: 57px auto 0;
-    border-radius: 5px;
-    font-size: 11px;
-  }
-
-  .imsAccountLogin {
-    margin: 33px 0 0;
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-  .imsFooterLogin {
-    gap: 13px;
-    margin-top: 47px;
-    font-size: 11px;
-    line-height: 16px;
-  }
-
-  .imsFooterLogin i {
-    width: 3px;
-    height: 3px;
-  }
-
-  .imsPageLogin {
-    font-size: 13px;
-  }
-
-}
-
-@media (max-width: 1400px), (max-height: 800px) {
-  .imsBrandLogin {
-    gap: 8px;
-  }
-
-  .imsLogoLogin {
-    width: 30px;
-    height: 30px;
-    border-radius: 7px;
-  }
-
-  .imsLogoLogin img {
-    width: 17px;
-  }
-
-  .imsBrandTextLogin h3 {
     font-size: 14px;
-    line-height: 19px;
-  }
-
-  .imsBrandTextLogin p {
-    font-size: 9px;
-    line-height: 12px;
-    letter-spacing: 0;
-  }
-
-  .imsTitleLogin {
-    font-size: 29px;
-    line-height: 34px;
-  }
-
-  .imsDescLogin {
-    font-size: 11px;
-    line-height: 15px;
-  }
-
-  .imsActiveCardLogin {
-    height: 74px;
-    padding: 0 0 0 38px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(30, 50, 100, 6%);
-  }
-
-  .imsActiveCardLogin h2 {
-    font-size: 21px;
-    line-height: 25px;
-  }
-
-  .imsActiveLabelLogin {
-    margin-top: 3px;
-    font-size: 8px;
-    line-height: 10px;
-  }
-
-  .imsActiveTrendLogin {
-    gap: 3px;
-    margin-top: 4px;
-    font-size: 9px;
-    line-height: 14px;
-  }
-
-  .imsActiveTrendLogin img {
-    width: 10px;
+    line-height: 22px;
+    margin-top: 20px;
   }
 
   .imsArtLogin {
-    width: 509px;
-    height: 419px;
+    height: 360px;
   }
 
-  .imsQuoteLogin {
-    height: 51px;
-    padding: 0 12px;
-    gap: 11px;
-    border-radius: 11px;
-  }
-
-  .imsQuoteIconLogin {
-    width: 33px;
-    height: 33px;
-    border-radius: 7px;
-  }
-
-  .imsQuoteIconLogin img {
-    width: 17px;
-  }
-
-  .imsQuoteTextLogin p {
-    font-size: 10px;
-    line-height: 15px;
-  }
-
-  .imsQuoteTextLogin span {
-    margin-top: 1px;
-    font-size: 9px;
-    line-height: 12px;
-  }
-
-  .imsHeadingLogin {
-    font-size: 23px;
-    line-height: 28px;
-  }
-
-  .imsSubheadLogin {
-    margin: 6px 0 0;
-    font-size: 11px;
-    line-height: 17px;
-  }
-
-  .imsLabelLogin,
-  .imsPasswordLabelLogin {
-    font-size: 10px;
-    line-height: 14px;
-  }
-
-  .imsForgotLogin {
-    font-size: 9px;
-  }
-
-  .imsLabelEmailLogin {
-    margin-top: 39px;
-  }
-
-  .imsInputLogin {
-    height: 40px;
-    margin-top: 6px;
-  }
-
-  .imsInputLogin input {
-    padding: 0 34px 0 29px;
-    border-radius: 6px;
-    font-size: 11px;
-  }
-
-  .imsIconInputLogin {
-    left: 9px;
-    width: 14px;
-    height: 14px;
-  }
-
-  .imsIconEyeLogin {
-    right: 10px;
-    width: 15px;
-    height: 15px;
-  }
-
-  .imsIconEyeLogin img {
-    width: 15px;
-    height: 15px;
-  }
-
-  .imsShutEyeLogin {
-    width: 15px;
-    height: 15px;
-  }
-
-  .imsPasswordRowLogin {
-    margin-top: 19px;
-  }
-
-  .imsRememberLogin {
-    gap: 7px;
-    margin-top: 19px;
-    height: 14px;
-    font-size: 10px;
-  }
-
-  .imsRememberLogin input {
-    width: 12px;
-    height: 12px;
-  }
-
-  .imsErrorLogin {
-    margin: 11px 0 0;
-    font-size: 10px;
-    line-height: 12px;
-  }
-
-  .imsSigninLogin {
-    gap: 6px;
-    height: 36px;
-    margin-top: 19px;
-    border-radius: 4px;
-    font-size: 11px;
-    letter-spacing: 0;
-  }
-
-  .imsSigninLogin img {
-    width: 11px;
-  }
-
-  .imsLineDividerLogin {
-    margin-top: 45px;
-    height: 14px;
-  }
-
-  .imsLineDividerLogin::before {
-    top: 7px;
-  }
-
-  .imsLineDividerLogin span {
-    padding: 0 11px;
-    font-size: 9px;
-    line-height: 14px;
-  }
-
-  .imsGoogleLogin img {
-    width: 14px;
-  }
-
-  .imsGoogleLogin {
-    gap: 6px;
-    width: 130px;
-    height: 33px;
-    margin: 48px auto 0;
-    border-radius: 4px;
-    font-size: 10px;
-  }
-
-  .imsAccountLogin {
-    margin: 28px 0 0;
-    font-size: 11px;
-    line-height: 17px;
-  }
-
-  .imsFooterLogin {
-    gap: 11px;
-    margin-top: 40px;
-    font-size: 10px;
-    line-height: 14px;
-  }
-
-  .imsFooterLogin i {
-    width: 3px;
-    height: 3px;
-  }
-
-  .imsPageLogin {
-    font-size: 11px;
-  }
-
-}
-
-@media (max-width: 1100px), (max-height: 600px) {
-  .imsBrandLogin {
-    gap: 6px;
-  }
-
-  .imsLogoLogin {
-    width: 22px;
-    height: 22px;
-    border-radius: 5px;
-  }
-
-  .imsLogoLogin img {
-    width: 12px;
-  }
-
-  .imsBrandTextLogin h3 {
-    font-size: 10px;
-    line-height: 14px;
-  }
-
-  .imsBrandTextLogin p {
-    font-size: 7px;
-    line-height: 9px;
-    letter-spacing: 0;
-  }
-
-  .imsTitleLogin {
-    font-size: 22px;
-    line-height: 25px;
-  }
-
-  .imsDescLogin {
-    font-size: 8px;
-    line-height: 11px;
-    top: 25%;
-  }
-
-  .imsActiveCardLogin {
-    height: 54px;
-    padding: 0 0 0 28px;
-    border-radius: 6px;
-    box-shadow: 0 1px 2px rgba(30, 50, 100, 6%);
-  }
-
-  .imsActiveCardLogin h2 {
-    font-size: 15px;
-    line-height: 18px;
-  }
-
-  .imsActiveLabelLogin {
-    margin-top: 2px;
-    font-size: 6px;
-    line-height: 7px;
+  .imsActiveCardLogin strong {
+    font-size: 24px;
+    line-height: 30px;
   }
 
   .imsActiveTrendLogin {
-    gap: 3px;
-    margin-top: 3px;
-    font-size: 7px;
-    line-height: 10px;
-  }
-
-  .imsActiveTrendLogin img {
-    width: 7px;
-  }
-
-  .imsArtLogin {
-    width: 370px;
-    height: 305px;
-  }
-
-  .imsQuoteLogin {
-    height: 37px;
-    padding: 0 9px;
-    gap: 8px;
-    border-radius: 8px;
-  }
-
-  .imsQuoteIconLogin {
-    width: 24px;
-    height: 24px;
-    border-radius: 5px;
-  }
-
-  .imsQuoteIconLogin img {
-    width: 12px;
-  }
-
-  .imsQuoteTextLogin p {
-    font-size: 7px;
-    line-height: 11px;
-  }
-
-  .imsQuoteTextLogin span {
-    margin-top: 1px;
-    font-size: 7px;
-    line-height: 9px;
-  }
-
-  .imsHeadingLogin {
-    font-size: 18px;
-    line-height: 20px;
-  }
-
-  .imsSubheadLogin {
-    margin: 5px 0 0;
-    font-size: 8px;
-    line-height: 12px;
-  }
-
-  .imsLabelLogin,
-  .imsPasswordLabelLogin {
-    font-size: 8px;
-    line-height: 10px;
-  }
-
-  .imsForgotLogin {
-    font-size: 7px;
-  }
-
-  .imsLabelEmailLogin {
-    margin-top: 28px;
-  }
-
-  .imsInputLogin {
-    height: 29px;
-    margin-top: 5px;
-  }
-
-  .imsInputLogin input {
-    padding: 0 25px 0 21px;
-    border-radius: 4px;
-    font-size: 8px;
-  }
-
-  .imsIconInputLogin {
-    left: 7px;
-    width: 10px;
-    height: 10px;
-  }
-
-  .imsIconEyeLogin {
-    right: 8px;
-    width: 11px;
-    height: 11px;
-  }
-
-  .imsIconEyeLogin img {
-    width: 11px;
-    height: 11px;
-  }
-
-  .imsShutEyeLogin {
-    width: 11px;
-    height: 11px;
-  }
-
-  .imsPasswordRowLogin {
-    margin-top: 14px;
-  }
-
-  .imsRememberLogin {
-    gap: 5px;
-    margin-top: 14px;
-    height: 10px;
-    font-size: 8px;
-  }
-
-  .imsRememberLogin input {
-    width: 9px;
-    height: 9px;
-  }
-
-  .imsErrorLogin {
-    margin: 8px 0 0;
-    font-size: 7px;
-    line-height: 9px;
-  }
-
-  .imsSigninLogin {
-    gap: 4px;
-    height: 27px;
-    margin-top: 14px;
-    border-radius: 3px;
-    font-size: 8px;
-    letter-spacing: 0;
-  }
-
-  .imsSigninLogin img {
-    width: 8px;
-  }
-
-  .imsLineDividerLogin {
-    margin-top: 33px;
-    height: 10px;
-  }
-
-  .imsLineDividerLogin::before {
-    top: 5px;
-  }
-
-  .imsLineDividerLogin span {
-    padding: 0 8px;
-    font-size: 7px;
-    line-height: 10px;
-  }
-
-  .imsGoogleLogin img {
-    width: 10px;
-  }
-
-  .imsGoogleLogin {
-    gap: 4px;
-    width: 95px;
-    height: 24px;
-    margin: 35px auto 0;
-    border-radius: 3px;
-    font-size: 7px;
-  }
-
-  .imsAccountLogin {
-    margin: 20px 0 0;
-    font-size: 8px;
-    line-height: 12px;
-  }
-
-  .imsFooterLogin {
-    gap: 8px;
-    margin-top: 33px;
-    font-size: 7px;
-    line-height: 10px;
-  }
-
-  .imsFooterLogin i {
-    width: 2px;
-    height: 2px;
-  }
-
-  .imsPageLogin {
-    font-size: 8px;
-  }
-
-}
-
-@media (max-width: 700px), (max-height: 400px) {
-  .imsBrandLogin {
-    gap: 5px;
-  }
-
-  .imsLogoLogin {
-    width: 17px;
-    height: 17px;
-    border-radius: 4px;
-  }
-
-  .imsLogoLogin img {
-    width: 9px;
-  }
-
-  .imsBrandTextLogin h3 {
-    font-size: 8px;
-    line-height: 11px;
-  }
-
-  .imsBrandTextLogin p {
-    font-size: 5px;
-    line-height: 7px;
-    letter-spacing: 0;
-  }
-
-  .imsTitleLogin {
-    font-size: 16px;
-    line-height: 19px;
-  }
-
-  .imsDescLogin {
-    font-size: 6px;
-    line-height: 8px;
-    top: 25%;
-  }
-
-  .imsActiveCardLogin {
-    height: 40px;
-    padding: 0 0 0 21px;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(30, 50, 100, 6%);
-  }
-
-  .imsActiveCardLogin h2 {
-    font-size: 11px;
-    line-height: 14px;
-  }
-
-  .imsActiveLabelLogin {
-    margin-top: 2px;
-    font-size: 4px;
-    line-height: 5px;
-  }
-
-  .imsActiveTrendLogin {
-    gap: 2px;
-    margin-top: 2px;
-    font-size: 5px;
-    line-height: 8px;
-  }
-
-  .imsActiveTrendLogin img {
-    width: 5px;
-  }
-
-  .imsArtLogin {
-    width: 278px;
-    height: 229px;
-  }
-
-  .imsQuoteLogin {
-    height: 28px;
-    padding: 0 6px;
-    gap: 6px;
-    border-radius: 6px;
-  }
-
-  .imsQuoteIconLogin {
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
-  }
-
-  .imsQuoteIconLogin img {
-    width: 9px;
-  }
-
-  .imsQuoteTextLogin p {
-    font-size: 5px;
-    line-height: 8px;
-  }
-
-  .imsQuoteTextLogin span {
-    margin-top: 1px;
-    font-size: 5px;
-    line-height: 7px;
-  }
-
-  .imsHeadingLogin {
     font-size: 12px;
-    line-height: 15px;
   }
 
-  .imsSubheadLogin {
-    margin: 3px 0 0;
-    font-size: 6px;
-    line-height: 9px;
+  .imsHeadingLogin {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .imsTitleLogin {
+    font-size: 26px;
+    line-height: 36px;
   }
 
-  .imsLabelLogin,
-  .imsPasswordLabelLogin {
-    font-size: 6px;
-    line-height: 8px;
+  .imsActiveCardLogin {
+    padding: 12px;
   }
 
-  .imsForgotLogin {
-    font-size: 5px;
+  .imsActiveCardLogin strong {
+    font-size: 20px;
   }
 
-  .imsLabelEmailLogin {
-    margin-top: 21px;
-  }
-
-  .imsInputLogin {
-    height: 22px;
-    margin-top: 3px;
-  }
-
-  .imsInputLogin input {
-    padding: 0 19px 0 16px;
-    border-radius: 3px;
-    font-size: 6px;
-  }
-
-  .imsIconInputLogin {
-    left: 5px;
-    width: 8px;
-    height: 8px;
-  }
-
-  .imsIconEyeLogin {
-    right: 6px;
-    width: 8px;
-    height: 8px;
-  }
-
-  .imsIconEyeLogin img {
-    width: 8px;
-    height: 8px;
-  }
-
-  .imsShutEyeLogin {
-    width: 8px;
-    height: 8px;
-  }
-
-  .imsPasswordRowLogin {
-    margin-top: 11px;
-  }
-
-  .imsRememberLogin {
-    gap: 4px;
-    margin-top: 11px;
-    height: 8px;
-    font-size: 6px;
-  }
-
-  .imsRememberLogin input {
-    width: 6px;
-    height: 6px;
-  }
-
-  .imsErrorLogin {
-    margin: 6px 0 0;
-    font-size: 5px;
-    line-height: 7px;
-  }
-
-  .imsSigninLogin {
-    gap: 3px;
-    height: 20px;
-    margin-top: 11px;
-    border-radius: 2px;
-    font-size: 6px;
+  .imsActiveLabelLogin {
+    font-size: 10px;
     letter-spacing: 0;
   }
 
-  .imsSigninLogin img {
-    width: 6px;
+  .imsActiveTrendLogin {
+    font-size: 10px;
   }
+}
 
-  .imsLineDividerLogin {
-    margin-top: 24px;
-    height: 8px;
-  }
-
-  .imsLineDividerLogin::before {
-    top: 4px;
-  }
-
-  .imsLineDividerLogin span {
-    padding: 0 6px;
-    font-size: 5px;
-    line-height: 8px;
-  }
-
-  .imsGoogleLogin img {
-    width: 8px;
-  }
-
-  .imsGoogleLogin {
-    gap: 3px;
-    width: 71px;
-    height: 18px;
-    margin: 26px auto 0;
-    border-radius: 2px;
-    font-size: 5px;
-  }
-
-  .imsAccountLogin {
-    margin: 15px 0 0;
-    font-size: 6px;
-    line-height: 9px;
-  }
-
-  .imsFooterLogin {
-    gap: 6px;
-    margin-top: 22px;
-    font-size: 5px;
-    line-height: 8px;
-  }
-
-  .imsFooterLogin i {
-    width: 2px;
-    height: 2px;
-  }
-
+@media (max-width: 1000px) {
   .imsPageLogin {
-    font-size: 6px;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    gap: 40px;
+    background: linear-gradient(to bottom, #566b94 0%, #aab5c9 35%, #fff 60%);
   }
 
+  .imsLeftLogin,
+  .imsFormLogin {
+    width: 100%;
+    max-width: 640px;
+    margin-top: 0;
+  }
+
+  .imsArtLogin {
+    height: 300px;
+  }
+
+  .imsQuoteLogin {
+    width: 100%;
+  }
 }
 
-@media (max-height: 500px) {
+@media (max-width: 600px) {
+  .imsPageLogin {
+    padding: 24px 20px;
+  }
+
+  .imsActiveCardLogin {
+    width: 31%;
+    padding: 8px;
+  }
+
+  .imsActiveCardLogin strong {
+    font-size: 18px;
+  }
+
+  .imsActiveTrendLogin {
+    flex-wrap: wrap;
+  }
+
+  .imsTitleLogin {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
   .imsArtLogin {
-    width: 279px;
-    height: 230px;
+    width: 100%;
+    height: 260px;
   }
-
-  .imsLabelEmailLogin {
-    margin-top: 24px;
-  }
-
-  .imsPasswordRowLogin {
-    margin-top: 12px;
-  }
-
-  .imsRememberLogin {
-    margin-top: 12px;
-  }
-
-  .imsLineDividerLogin {
-    margin-top: 28px;
-  }
-
-  .imsGoogleLogin {
-    margin-top: 30px;
-  }
-
-  .imsFooterLogin {
-    margin-top: 22px;
-  }
-
-}
-
-@media (max-height: 400px) {
-  .imsArtLogin {
-    width: 180px;
-    height: 148px;
-  }
-
-  .imsLabelEmailLogin {
-    margin-top: 12px;
-  }
-
-  .imsPasswordRowLogin {
-    margin-top: 8px;
-  }
-
-  .imsRememberLogin {
-    margin-top: 8px;
-  }
-
-  .imsLineDividerLogin {
-    margin-top: 20px;
-  }
-
-  .imsGoogleLogin {
-    margin-top: 20px;
-  }
-
-  .imsFooterLogin {
-    margin-top: 8px;
-  }
-
-  .imsAccountLogin {
-    margin-top: 8px;
-  }
-
 }

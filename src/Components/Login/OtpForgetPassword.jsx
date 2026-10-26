@@ -7,35 +7,62 @@ import shield from '../../assets/Login Assets/shield.png';
 import lock from '../../assets/Login Assets/secureLock.png';
 import handshake from '../../assets/Login Assets/handshake.png';
 import rightArrow from '../../assets/Login Assets/sendArrow.png';
-const codeLength = 6;
 
+const codeLength = 6;
+const codeLifetime = 55;
 
 export const OtpForgetPassword = () => {
   const navigate = useNavigate();
   const inputs = useRef([]);
   const [digits, setDigits] = useState(() => Array(codeLength).fill(''));
-  const [seconds, setSeconds] = useState(55);
+  const [seconds, setSeconds] = useState(codeLifetime);
   const [error, setError] = useState('');
+  const [expiresAt, setExpiresAt] = useState(() => Date.now() + codeLifetime * 1000);
 
   useEffect(() => {
-    if (seconds <= 0) return undefined;
-    const timer = setTimeout(() => setSeconds((value) => value - 1), 1000);
-    return () => clearTimeout(timer);
-  }, [seconds]);
+    const timer = setInterval(() => {
+      const millisecondsLeft = expiresAt - Date.now();
+      const secondsLeft = Math.ceil(millisecondsLeft / 1000);
 
-  const clock = `00:${String(seconds).padStart(2, '0')}`;
+      if (secondsLeft <= 0) {
+        setSeconds(0);
+        clearInterval(timer);
+      } else {
+        setSeconds(secondsLeft);
+      }
+    }, 250);
 
-  const updateDigit = (index, value) => {
-    const next = digits.slice();
-    next[index] = value;
-    setDigits(next);
+    return () => clearInterval(timer);
+  }, [expiresAt]);
+
+  const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
+  const remainingSeconds = String(seconds % 60).padStart(2, '0');
+  const clock = `${minutes}:${remainingSeconds}`;
+  const isExpired = seconds === 0;
+
+  const handleResend = () => {
+    if (Date.now() < expiresAt) {
+      return;
+    }
+
+    setExpiresAt(Date.now() + codeLifetime * 1000);
+    setSeconds(codeLifetime);
+    setDigits(Array(codeLength).fill(''));
     setError('');
+    inputs.current[0].focus();
   };
 
   const handleChange = (index, event) => {
     const value = event.target.value.replace(/\D/g, '').slice(-1);
-    updateDigit(index, value);
-    if (value && index < codeLength - 1) inputs.current[index + 1].focus();
+    const nextDigits = digits.slice();
+    nextDigits[index] = value;
+
+    setDigits(nextDigits);
+    setError('');
+
+    if (value && index < codeLength - 1) {
+      inputs.current[index + 1].focus();
+    }
   };
 
   const handleKeyDown = (index, event) => {
@@ -45,37 +72,59 @@ export const OtpForgetPassword = () => {
   };
 
   const handlePaste = (event) => {
-    const text = event.clipboardData.getData('text').replace(/\D/g, '').slice(0, codeLength);
-    if (!text) return;
+    const text = event.clipboardData
+      .getData('text')
+      .replace(/\D/g, '')
+      .slice(0, codeLength);
+    if (!text) {
+      return;
+    }
+
     event.preventDefault();
-    const next = Array(codeLength).fill('');
-    text.split('').forEach((char, index) => {
-      next[index] = char;
-    });
-    setDigits(next);
+    const nextDigits = Array(codeLength).fill('');
+
+    for (let index = 0; index < text.length; index++) {
+      nextDigits[index] = text[index];
+    }
+
+    setDigits(nextDigits);
     setError('');
-    inputs.current[Math.min(text.length, codeLength) - 1].focus();
+    inputs.current[text.length - 1].focus();
   };
 
   const handleVerify = (event) => {
-  event.preventDefault();
-  const code = digits.join('');
-  if (code.length !== codeLength || digits.some((d) => d === '')) {
-    setError('Please enter all 6 digits.');
-    return;
-  }
-  setError('');
-  navigate('/reset-password');
-};
+    event.preventDefault();
+
+    if (Date.now() >= expiresAt) {
+      setError('Your code has expired. Select Resend to get a new code.');
+      return;
+    }
+
+    const code = digits.join('');
+    if (!/^[0-9]{6}$/.test(code)) {
+      setError('Please enter all 6 digits.');
+      return;
+    }
+
+    setError('');
+    navigate('/reset-password');
+  };
 
   return (
     <div className="imsPageOtp">
       <div className="imsPanelOtp">
         <div className="imsBrandOtp">
-          <img className="imsLogoOtp" src={graduationCap} alt="Internship Management System" />
+          <img
+            className="imsLogoOtp"
+            src={graduationCap}
+            alt=""
+          />
           <div className="imsBrandTextOtp">
-            <h3 className="imsBrandNameOtp">Internship Management System</h3>
-            <p className="imsTaglineOtp">Learn <span className="imsDotTaglineOtp"></span> Grow <span className="imsDotTaglineOtp"></span> Build Your Future</p>
+            <div className="imsBrandNameOtp">Internship Management System</div>
+            <p className="imsTaglineOtp">
+              Learn <span className="imsDotTaglineOtp"></span> Grow{' '}
+              <span className="imsDotTaglineOtp"></span> Build Your Future
+            </p>
           </div>
         </div>
 
@@ -90,13 +139,22 @@ export const OtpForgetPassword = () => {
           institutional credentials.
         </p>
 
-        <img className="imsArtOtp" src={illustration} alt="Identity verification" />
+        <img
+          className="imsArtOtp"
+          src={illustration}
+          alt="Identity verification"
+        />
 
         <div className="imsNoteOtp">
-          <img className="imsNoteIconOtp" src={shield} alt="shield" />
+          <img
+            className="imsNoteIconOtp"
+            src={shield}
+            alt=""
+          />
           <div className="imsNoteTextOtp">
             <p className="imsNoteBodyOtp">
-              “Credential change verified across university registrars, Dean approvals, and enterprise partner portals.”
+              “Credential change verified across university registrars, Dean approvals,
+              and enterprise partner portals.”
             </p>
             <p className="imsNoteMetaOtp">
               <span className="imsProtocolOtp">Enterprise IAM & Security Operations</span>
@@ -106,12 +164,20 @@ export const OtpForgetPassword = () => {
         </div>
       </div>
 
-      <form className="imsFormOtp" onSubmit={handleVerify}>
+      <form
+        className="imsFormOtp"
+        onSubmit={handleVerify}
+      >
         <h2 className="imsHeadingOtp">Enter Verification Code</h2>
         <p className="imsSubheadOtp">
-          We’ve sent a 6-digit code to your registered Email and phone number. The code
-          <br />
-          will expire in <span className="imsExpireOtp">09:59</span> minutes.
+          {isExpired ? (
+            'Your verification code has expired. Select Resend to get a new code.'
+          ) : (
+            <>
+              Enter your 6-digit code. It expires in{' '}
+              <span className="imsExpireOtp">{clock}</span>.
+            </>
+          )}
         </p>
 
         <div className="imsCodesOtp">
@@ -135,33 +201,57 @@ export const OtpForgetPassword = () => {
         </div>
 
         {error ? (
-          <p className="imsErrorOtp" role="alert">
+          <p
+            className="imsErrorOtp"
+            role="alert"
+          >
             {error}
           </p>
         ) : null}
 
-        <button type="submit" className="imsVerifyOtp">
+        <button
+          type="submit"
+          className="imsVerifyOtp"
+          disabled={isExpired}
+        >
           Verify and Continue
-          <img src={rightArrow} alt="rightArrow" />
+          <img
+            src={rightArrow}
+            alt=""
+          />
         </button>
 
         <p className="imsResendOtp">
-          <span className="imsPromptOtp">Didn’t receive the code?</span>
-          <button type="button" className="imsLinkOtp" onClick={() => setSeconds(55)}>
-            Resend
-          </button>
-          <span className="imsTimerOtp">(in {clock})</span>
+          {isExpired ? (
+            <button
+              type="button"
+              className="imsLinkOtp"
+              onClick={handleResend}
+            >
+              Resend verification code
+            </button>
+          ) : (
+            <span className="imsTimerOtp">You can resend a code in {clock}.</span>
+          )}
         </p>
 
         <div className="imsDividerOtp" />
 
         <div className="imsBadgesOtp">
           <span className="imsBadgeOtp">
-            <img className="imsBadgeIconOtp" src={lock} alt="lock" />
+            <img
+              className="imsBadgeIconOtp"
+              src={lock}
+              alt=""
+            />
             End-to-end encrypted
           </span>
           <span className="imsBadgeOtp">
-            <img className="imsBadgeIconOtp" src={handshake} alt="handshake" />
+            <img
+              className="imsBadgeIconOtp"
+              src={handshake}
+              alt=""
+            />
             Secure handshake
           </span>
         </div>
@@ -169,5 +259,3 @@ export const OtpForgetPassword = () => {
     </div>
   );
 };
-
-

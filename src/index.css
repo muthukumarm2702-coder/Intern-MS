@@ -2,23 +2,13 @@
   box-sizing: border-box;
   margin: 0;
 }
+
 html {
   font-size: 16px;
-}
-html,
-body,
-#ims-root {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  overflow: hidden;
-  background: #fff;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
-}
-
-#ims-root {
-  position: relative;
+  min-height: 100%;
+  background: #fff;
 }

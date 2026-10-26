@@ -6,5 +6,5 @@ import './index.css';
 createRoot(document.getElementById('ims-root')).render(
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 );

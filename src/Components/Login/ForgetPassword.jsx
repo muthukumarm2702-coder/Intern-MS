@@ -14,8 +14,8 @@ export const ForgetPassword = () => {
   const navigate = useNavigate();
   const [method, setMethod] = useState('email');
 
-  const handleSend = (e) => {
-    e.preventDefault();
+  const handleSend = (event) => {
+    event.preventDefault();
     navigate('/otp');
   };
 
@@ -23,10 +23,17 @@ export const ForgetPassword = () => {
     <div className="imsPageForgot">
       <div className="imsPanelForgot">
         <div className="imsBrandForgot">
-          <img className="imsLogoForgot" src={graduationCap} alt="Internship Management System" />
+          <img
+            className="imsLogoForgot"
+            src={graduationCap}
+            alt=""
+          />
           <div className="imsBrandTextForgot">
-            <h3 className="imsBrandNameForgot">Internship Management System</h3>
-            <p className="imsTaglineForgot">Learn <span className="imsDotTaglineForgot"></span> Grow <span className="imsDotTaglineForgot"></span> Build Your Future</p>
+            <div className="imsBrandNameForgot">Internship Management System</div>
+            <p className="imsTaglineForgot">
+              Learn <span className="imsDotTaglineForgot"></span> Grow{' '}
+              <span className="imsDotTaglineForgot"></span> Build Your Future
+            </p>
           </div>
         </div>
 
@@ -36,33 +43,51 @@ export const ForgetPassword = () => {
           Identity Protection
         </h1>
         <p className="imsDescForgot">
-          Quickly regain access to your verified internship credentials, university approvals,
+          Quickly regain access to your verified internship credentials, university
+          approvals,
           <br />
           and active corporate placements.
         </p>
 
-        <img className="imsArtForgot" src={illustration} alt="Account recovery" />
+        <img
+          className="imsArtForgot"
+          src={illustration}
+          alt="Account recovery"
+        />
 
         <div className="imsNoteForgot">
-          <img className="imsNoteIconForgot" src={shield} alt="shield" />
+          <img
+            className="imsNoteIconForgot"
+            src={shield}
+            alt=""
+          />
           <div className="imsNoteTextForgot">
             <p className="imsNoteBodyForgot">
-              All password reset requests are cryptographically signed and logged according to institutional
-              FERPA & SOC-2 compliance standards.
+              All password reset requests are cryptographically signed and logged
+              according to institutional FERPA & SOC-2 compliance standards.
             </p>
             <p className="imsNoteMetaForgot">
               <span className="imsProtocolForgot">
                 Campus Identity & Access Management (IAM) Protocol
               </span>
-              <span className="imsVerifiedForgot"> • Verified Institutional Security</span>
+              <span className="imsVerifiedForgot">
+                {' '}
+                &bull;Verified Institutional Security
+              </span>
             </p>
           </div>
         </div>
       </div>
 
-      <form className="imsFormForgot" onSubmit={handleSend}>
+      <form
+        className="imsFormForgot"
+        onSubmit={handleSend}
+      >
         <div className="imsLockForgot">
-          <img src={lockReset} alt="lockReset" />
+          <img
+            src={lockReset}
+            alt="lockReset"
+          />
         </div>
 
         <h2 className="imsHeadingForgot">Forgot Password?</h2>
@@ -72,49 +97,82 @@ export const ForgetPassword = () => {
           verification code.
         </p>
 
-        <p className="imsLabelForgot">Verification Method</p>
+        <p
+          className="imsLabelForgot"
+          id="verification-method-label"
+        >
+          Verification Method
+        </p>
 
         <button
           type="button"
           className={`imsMethodForgot${method === 'email' ? ' imsSelectedForgot' : ''}`}
+          aria-pressed={method === 'email'}
+          aria-describedby="verification-method-label"
           onClick={() => setMethod('email')}
         >
           <span className="imsMethodIconForgot">
-            <img src={emailIcon} alt="emailIcon" />
+            <img
+              src={emailIcon}
+              alt=""
+            />
           </span>
           <span className="imsMethodTextForgot">
             <span className="imsMethodTitleForgot">Email Verification</span>
             <span className="imsMethodInfoForgot">m**u**r@g***.com</span>
           </span>
-          <span className={`imsRadioForgot${method === 'email' ? ' imsCheckedForgot' : ''}`} />
+          <span
+            className={`imsRadioForgot${method === 'email' ? ' imsCheckedForgot' : ''}`}
+            aria-hidden="true"
+          />
         </button>
 
         <button
           type="button"
           className={`imsMethodForgot${method === 'sms' ? ' imsSelectedForgot' : ''}`}
+          aria-pressed={method === 'sms'}
+          aria-describedby="verification-method-label"
           onClick={() => setMethod('sms')}
         >
           <span className="imsMethodIconForgot imsPhoneForgot">
-            <img src={phone} alt="phone" />
+            <img
+              src={phone}
+              alt=""
+            />
           </span>
           <span className="imsMethodTextForgot">
             <span className="imsMethodTitleForgot">SMS / Text Message</span>
             <span className="imsMethodInfoForgot">Send code to +91 9****5678</span>
           </span>
-          <span className={`imsRadioForgot${method === 'sms' ? ' imsCheckedForgot' : ''}`} />
+          <span
+            className={`imsRadioForgot${method === 'sms' ? ' imsCheckedForgot' : ''}`}
+            aria-hidden="true"
+          />
         </button>
 
-        <button type="submit" className="imsSendForgot">
+        <button
+          type="submit"
+          className="imsSendForgot"
+        >
           Send Verification Code
-          <img src={rightArrow} alt="rightArrow" />
+          <img
+            src={rightArrow}
+            alt=""
+          />
         </button>
 
-        <button type="button" className="imsBackForgot" onClick={() => navigate('/login')}>
-          <img src={backArrow} alt="backArrow" />
+        <button
+          type="button"
+          className="imsBackForgot"
+          onClick={() => navigate('/login')}
+        >
+          <img
+            src={backArrow}
+            alt=""
+          />
           Back to Login
         </button>
       </form>
     </div>
   );
 };
-
