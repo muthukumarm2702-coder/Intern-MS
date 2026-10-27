@@ -149,8 +149,19 @@ export const HRRegistration = () => {
               <div className="imsBrandTitleHRRegistration">
                 Internship Management System
               </div>
-              <span className="imsTaglineHRRegistration">
-                <span>Learn</span> <span>Grow</span> <span>Build Your Future</span>
+              <span
+                className="imsTaglineHRRegistration"
+                aria-label="Learn, Grow, Build Your Future"
+              >
+                <span>Learn</span>
+                <span className="imsTaglineDotHRRegistration" aria-hidden="true">
+                  •
+                </span>
+                <span>Grow</span>
+                <span className="imsTaglineDotHRRegistration" aria-hidden="true">
+                  •
+                </span>
+                <span>Build Your Future</span>
               </span>
             </div>
           </div>

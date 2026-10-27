@@ -98,7 +98,8 @@
 
 .imsTaglineHRRegistration {
   display: flex;
-  gap: 3px;
+  align-items: center;
+  gap: 4px;
   font-size: 6px;
 }
 
